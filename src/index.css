@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "./styles/colors.css";
+@import "./styles/scrollbar.css";
+@import "./styles/input.reset.css";
+
+/* src/index.css */
+@import 'tailwindcss/utilities';
+
+@layer theme, base, components, utilities;
+@layer utilities {
+  .mx-6 {
+    background-color: var(--color-text1);
+  }
+}
+
+
+body {
+  /* 这个代表全局默认使用这个样式 */
+  /* @apply bg-bg2 text-text1 caret-primary; */
+
+  font-family: "IBM Plex Sans", system-ui;
+
+  /* Safari 上的原生滑动 */
+  overflow-scrolling: touch;
+}
+
+#root{
+  min-height: 100dvh;
+  display: flex;
+}
+
+/*
+dvh 属性比较新，和 vh 兼容一下
+*/
+.h-dvh-vh {
+  height: 100vh;
+  height: 100dvh;
+}
