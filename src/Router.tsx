@@ -9,6 +9,7 @@ const GsapDemo = lazy(() => import("./Gsap"));
 const R19 = lazy(() => import("./r19"));
 const TransItion = lazy(() => import("./r19/_useTransition"));
 const MyAction = lazy(() => import("./r19/action"));
+const MyUseActionState = lazy(() => import("./r19/MyUseActionsState"));
 
 const SelfRouter = () => {
   return (
@@ -29,6 +30,7 @@ const SelfRouter = () => {
         <Route path="/r19" element={<R19 />}>
           <Route path="transition" element={<TransItion />} />
           <Route path="myActions" element={<MyAction />} />
+          <Route path="myUseActionState" element={<MyUseActionState />} />
         </Route>
       </Routes>
     </Suspense>

@@ -12,7 +12,7 @@
     /* 弹窗 */
     --color-popup-bg: 255 255 255;
     /* 文字 1 */
-    --color-text1: rgb(41,41,41);
+    --color-text1: rgb(240,236,235);
     --color-text2: 134 134 138;
     --color-text3: 153 153 0;
   }
@@ -29,7 +29,7 @@
     /* 弹窗 */
     --color-popup-bg: 38 38 42;
     /* 文字 1 */
-    --color-text1: rgb(240,236,235);
+    --color-text1: rgb(41,41,41);
     --color-text2: 156 156 156;
     --color-text3: 126 0 126;
   }
