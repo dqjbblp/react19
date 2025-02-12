@@ -1,6 +1,6 @@
 /**
  * useTransition 会标记一个低优先加载，
- * 正常来说：点击Slow选项卡，会导致：卡顿，并且点击其他两个选项卡也会卡顿，显得没效果
+ * 正常来说：点击Slow选项卡，会导致：卡顿，并且点击其他两个选项卡也会卡顿，显得没效果，会阻塞ui渲染
  */
 import { memo, useState, useTransition } from "react";
 
@@ -9,7 +9,7 @@ const TransItion = () => {
   const [isPending, startTransition] = useTransition(); // 第一个返回值是：是否加载完毕；第二个是：标记哪些是低优先级的函数
 
   const changeTab = (name: string) => {
-    // 这样标记之后，就是会使：点击其它的选项卡不卡顿
+    // 这样标记之后，就是会使：点击其它的选项卡不卡顿，不会阻塞ui渲染
     if (name === "Slow") {
       startTransition(() => {
         setTab(name);

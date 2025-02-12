@@ -19,7 +19,8 @@ const App = () => {
           <Link to="/user/2/hy">User hy</Link>
           <Link to="/gsap">Gsap</Link>
           <Link to="/r19">R19</Link>
-          <Link to="/r19/transition">R19--useTransition</Link>
+          <Link to="/r19/transition">R18--useTransition</Link>
+          <Link to="/r19/myActions">R19--actions</Link>
         </div>
 
         <button className={"justify-end"} onClick={changeTheme}>
@@ -27,7 +28,7 @@ const App = () => {
         </button>
       </header>
 
-      <div className={"flex-1 mx-6"}>
+      <div className={"flex-1 bg-theme"}>
         <SelfRouter />
       </div>
     </div>

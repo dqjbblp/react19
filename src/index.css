@@ -8,7 +8,7 @@
 
 @layer theme, base, components, utilities;
 @layer utilities {
-  .mx-6 {
+  .bg-theme {
     background-color: var(--color-text1);
   }
 }
