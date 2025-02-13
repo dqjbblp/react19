@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
 import SelfRouter from "./Router";
+import { useCallback, useEffect } from "react";
+import useThemeStore from "./Store/useThemeStore";
 
 const App = () => {
-  const changeTheme = () => {
-    const root = document.documentElement;
-    root.classList.toggle("dark");
-  };
+  const { theme, setTheme } = useThemeStore();
+
+  const changeTheme = useCallback(
+    (type: string) => {
+      const root = document.documentElement;
+      if (type === "dark") {
+        root.classList.add(type);
+      } else {
+        root.classList.remove("dark");
+      }
+      setTheme(type);
+    },
+    [setTheme]
+  );
+
+  useEffect(() => {
+    changeTheme(theme);
+  }, [theme, changeTheme]);
 
   return (
     <div className={"flex flex-col flex-1"}>
@@ -24,7 +40,10 @@ const App = () => {
           <Link to="/r19/myUseActionState">R19--useActionState</Link>
         </div>
 
-        <button className={"justify-end"} onClick={changeTheme}>
+        <button
+          className={"justify-end"}
+          onClick={() => changeTheme(theme === "light" ? "dark" : "light")}
+        >
           改变主题色
         </button>
       </header>
