@@ -12,6 +12,7 @@ const MyAction = lazy(() => import("./r19/action"));
 const MyUseActionState = lazy(() => import("./r19/MyUseActionsState"));
 const MyUseActionStatePlus = lazy(() => import("./r19/useActionsStatePlus"));
 const Optimistic = lazy(() => import("./r19/optimistic"));
+const MyFormStatus = lazy(() => import("./r19/myFormStatus"));
 
 const SelfRouter = () => {
   return (
@@ -35,6 +36,7 @@ const SelfRouter = () => {
           <Route path="myUseActionState" element={<MyUseActionState />} />
           <Route path="actionsPlus" element={<MyUseActionStatePlus />} />
           <Route path="optimistic" element={<Optimistic />} />
+          <Route path="myformStatus" element={<MyFormStatus />} />
         </Route>
       </Routes>
     </Suspense>

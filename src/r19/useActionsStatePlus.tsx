@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useActionState } from "react";
+import NewActionStatePlus from "../component/newActionStatePlus";
 
 const MyUseActionStatePlus = () => {
   const fn = async (prevValue: string, newValue: FormData) => {
@@ -33,6 +34,8 @@ const MyUseActionStatePlus = () => {
         </form>
         {isPending ? "loading...useActionState with form" : state}
       </div>
+      <hr />
+      <NewActionStatePlus />
     </div>
   );
 };

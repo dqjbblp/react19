@@ -1,4 +1,5 @@
 import { startTransition, useOptimistic, useState } from "react";
+import NewOpt from "../component/newOpt";
 
 const Optimistic = () => {
   const [tasks, setTasks] = useState<string[]>(["1", "2"]);
@@ -51,6 +52,8 @@ const Optimistic = () => {
         )}
       </ul>
       <button onClick={() => addTask(new Date().toString())}>添加任务</button>
+      <hr />
+      <NewOpt />
     </div>
   );
 };
