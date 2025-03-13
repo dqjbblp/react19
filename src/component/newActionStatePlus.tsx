@@ -14,7 +14,7 @@ const NewActionStatePlus = () => {
     }
   };
 
-  const [state, formAction, isPending] = useActionState(fn, []);
+  const [state, formAction, isPending] = useActionState(fn, ["1", "hy"]);
 
   const [optState, setOptState] = useOptimistic(state, (prev, newP: string) => {
     return [...prev, newP];

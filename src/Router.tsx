@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 const Home = lazy(() => import("./Home"));
@@ -13,33 +13,27 @@ const MyUseActionState = lazy(() => import("./r19/MyUseActionsState"));
 const MyUseActionStatePlus = lazy(() => import("./r19/useActionsStatePlus"));
 const Optimistic = lazy(() => import("./r19/optimistic"));
 const MyFormStatus = lazy(() => import("./r19/myFormStatus"));
+const Component = lazy(() => import("./SomeComponents"));
 
 const SelfRouter = () => {
   return (
-    <Suspense
-      fallback={
-        <div style={{ width: "100vw", height: "100vh", background: "green" }}>
-          Loading...
-        </div>
-      }
-    >
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/user/:userId" element={<User />}>
-          <Route path=":username" element={<UserName />} />
-        </Route>
-        <Route path="/gsap" element={<GsapDemo />} />
-        <Route path="/r19" element={<R19 />}>
-          <Route path="transition" element={<TransItion />} />
-          <Route path="myActions" element={<MyAction />} />
-          <Route path="myUseActionState" element={<MyUseActionState />} />
-          <Route path="actionsPlus" element={<MyUseActionStatePlus />} />
-          <Route path="optimistic" element={<Optimistic />} />
-          <Route path="myformStatus" element={<MyFormStatus />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/user/:userId" element={<User />}>
+        <Route path=":username" element={<UserName />} />
+      </Route>
+      <Route path="/gsap" element={<GsapDemo />} />
+      <Route path="/r19" element={<R19 />}>
+        <Route path="transition" element={<TransItion />} />
+        <Route path="myActions" element={<MyAction />} />
+        <Route path="myUseActionState" element={<MyUseActionState />} />
+        <Route path="actionsPlus" element={<MyUseActionStatePlus />} />
+        <Route path="optimistic" element={<Optimistic />} />
+        <Route path="myformStatus" element={<MyFormStatus />} />
+      </Route>
+      <Route path="component" element={<Component />} />
+    </Routes>
   );
 };
 

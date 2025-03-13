@@ -2,12 +2,10 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./styles/index.css";
 import "./index.css";
-import App from "./App";
-import ToolTip from "./component/toolTip";
+import App2 from "./App2";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <ToolTip />
-    <App />
+    <App2 />
   </BrowserRouter>
 );

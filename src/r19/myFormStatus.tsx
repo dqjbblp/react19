@@ -21,7 +21,7 @@ const MyFormStatus = () => {
 export default MyFormStatus;
 
 const Btn = () => {
-  const { pending, data, method, action } = useFormStatus();
+  const { pending, data } = useFormStatus();
   console.log(data?.get("message"));
 
   return <button type="submit">{pending ? "提交中.." : "提交"}</button>;

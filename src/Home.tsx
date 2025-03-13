@@ -1,6 +1,9 @@
 import { Suspense, use, useEffect, useState } from "react";
+import useToolTipStore from "./Store/useToolTipStore";
 
 const Home = () => {
+  const { setList } = useToolTipStore();
+
   return (
     <div>
       <p>Home</p>
@@ -8,6 +11,13 @@ const Home = () => {
         <Person />
       </Suspense>
       <FakseAsync />
+
+      <button onClick={() => setList({ msg: "成功啦～", type: "success" })}>
+        成功的提示
+      </button>
+      <button onClick={() => setList({ msg: "失败了☹️", type: "error" })}>
+        失败的提示
+      </button>
     </div>
   );
 };
