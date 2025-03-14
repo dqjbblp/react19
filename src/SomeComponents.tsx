@@ -8,6 +8,7 @@ import StepCircle from "./component/stepCircle";
 import Flip from "./component/flip";
 import Swiper from "./component/swaper";
 import CanvasEle from "./canvas";
+import ThreeD from "./component/threeD";
 
 const SomeComponents = () => {
   return (
@@ -33,6 +34,8 @@ const SomeComponents = () => {
       <Swiper />
 
       <CanvasEle />
+
+      <ThreeD />
     </div>
   );
 };
