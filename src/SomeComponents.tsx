@@ -9,6 +9,7 @@ import Flip from "./component/flip";
 import Swiper from "./component/swaper";
 import CanvasEle from "./canvas";
 import ThreeD from "./component/threeD";
+import WaterMask from "./component/waterMask";
 
 const SomeComponents = () => {
   return (
@@ -36,6 +37,8 @@ const SomeComponents = () => {
       <CanvasEle />
 
       <ThreeD />
+
+      <WaterMask />
     </div>
   );
 };
