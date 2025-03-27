@@ -40,7 +40,7 @@ const App = () => {
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/user/1">User 1</Link>
-              <Link to="/user/2/hy">User hy</Link>
+              <Link to="/user/2/hy/23">User hy</Link>
               <Link to="/gsap">Gsap</Link>
               <Link to="/component">Component</Link>
             </div>

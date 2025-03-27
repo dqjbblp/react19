@@ -8,6 +8,7 @@ const User = () => {
 
   return (
     <div>
+      <div className={"h-20 w-full bg-green-200"}>fake tableBar</div>
       <p>
         user:{userId}:{userName}
       </p>

@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 
 const UserName = () => {
-  const { username } = useParams();
+  const { username, age } = useParams();
 
   return (
     <div>
-      <p>userName:{username}</p>
+      <p>
+        userName:{username} -- age:{age}
+      </p>
     </div>
   );
 };

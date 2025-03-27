@@ -11,6 +11,7 @@ import CanvasEle from "./canvas";
 import ThreeD from "./component/threeD";
 import WaterMask from "./component/waterMask";
 import Radar from "./component/radar";
+import NewModal from "./component/Modal.tsx";
 
 const SomeComponents = () => {
   return (
@@ -42,6 +43,18 @@ const SomeComponents = () => {
       <WaterMask />
 
       <Radar />
+
+      <div
+        onClick={() =>
+          NewModal.show({
+            confirmBtn: true,
+            msg: "123",
+            emit: NewModal.hide,
+          })
+        }
+      >
+        点击弹窗
+      </div>
     </div>
   );
 };

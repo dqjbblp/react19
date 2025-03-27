@@ -21,7 +21,7 @@ const SelfRouter = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/user/:userId" element={<User />}>
-        <Route path=":username" element={<UserName />} />
+        <Route path=":username/:age" element={<UserName />} />
       </Route>
       <Route path="/gsap" element={<GsapDemo />} />
       <Route path="/r19" element={<R19 />}>
