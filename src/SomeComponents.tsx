@@ -12,6 +12,8 @@ import ThreeD from "./component/threeD";
 import WaterMask from "./component/waterMask";
 import Radar from "./component/radar";
 import NewModal from "./component/Modal.tsx";
+import KeepAlive from "./component/KeepAlive/keepAlive.tsx";
+import TestProvider from "./component/testProvider.tsx";
 
 const SomeComponents = () => {
   return (
@@ -55,6 +57,10 @@ const SomeComponents = () => {
       >
         点击弹窗
       </div>
+
+      <KeepAlive />
+
+      <TestProvider />
     </div>
   );
 };
