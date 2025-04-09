@@ -14,6 +14,7 @@ import Radar from "./component/radar";
 import NewModal from "./component/Modal.tsx";
 import KeepAlive from "./component/KeepAlive/keepAlive.tsx";
 import TestProvider from "./component/testProvider.tsx";
+import FakeList from "./component/fakeList.tsx";
 
 const SomeComponents = () => {
   return (
@@ -61,6 +62,8 @@ const SomeComponents = () => {
       <KeepAlive />
 
       <TestProvider />
+
+      <FakeList />
     </div>
   );
 };
