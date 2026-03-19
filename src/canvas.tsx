@@ -99,6 +99,15 @@ const CanvasEle = () => {
       const { x: mouseX, y: mouseY } = mousePosition.current;
 
       ctx?.clearRect(0, 0, canvasRef.current?.width, canvasRef.current?.height);
+
+      // 绘制鼠标位置的红点
+      if (mouseX !== 0 || mouseY !== 0) {
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+      }
+
       for (let i = 0; i <= this.points.length - 1; i++) {
         const p1 = this.points[i];
         p1.draw();

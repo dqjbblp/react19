@@ -1,27 +1,30 @@
-import { createContext, useContext } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 const TextContext = createContext<{ msg: string }>({ msg: "" });
 
 const TestProvider = () => {
   return (
-    <TextContext.Provider
-      value={{
-        msg: "123",
-      }}
-    >
-      <Son />
+    <TextContext.Provider value={{ msg: "default" }}>
+      <Son>
+        <Son>
+          <Son />
+        </Son>
+      </Son>
     </TextContext.Provider>
   );
 };
 
 export default TestProvider;
 
-const Son = () => {
+const Son = (props: { children?: ReactNode }) => {
   const context = useContext(TextContext);
 
   return (
-    <div>
-      <div>{context.msg}</div>
-    </div>
+    <TextContext.Provider value={{ msg: context.msg + "1" }}>
+      <div>
+        <div>{context.msg}</div>
+        {props?.children}
+      </div>
+    </TextContext.Provider>
   );
 };

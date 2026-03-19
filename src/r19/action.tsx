@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useState, useTransition } from "react";
+import axios, { CancelToken, CancelTokenSource } from "axios";
+import { useRef, useState, useTransition } from "react";
 
 const MyAction = () => {
   return (
@@ -26,16 +26,24 @@ const R18FormStyle = () => {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
 
+    const cancelTokenSourceRef = useRef<CancelTokenSource | null>(null);
+
   const handleSubmit = async () => {
-    setPending(true);
+    // setPending(true);
+        // 如果有未完成的请求，先取消
+    if (cancelTokenSourceRef.current) {
+      cancelTokenSourceRef.current.cancel("请求已被取消：新请求触发或组件卸载");
+    }
+        // 创建新的 cancelToken 源
+    cancelTokenSourceRef.current = axios.CancelToken.source();
     try {
-      const res = await updateName(name);
+      const res = await updateName(name,cancelTokenSourceRef.current.token);
       setName(res.data.id);
     } catch (err) {
       const error = err as Error;
       setError(error.message);
     }
-    setPending(false);
+    // setPending(false);
   };
 
   return (
@@ -45,7 +53,7 @@ const R18FormStyle = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <button disabled={pending} type="button" onClick={handleSubmit}>
+      <button  type="button" onClick={handleSubmit}>
         提交
       </button>
       <h1>{pending ? "loading..." : name}</h1>
@@ -88,12 +96,13 @@ const R19FormStyle = () => {
   );
 };
 
-const updateName = (name: string) => {
+const updateName = (name: string,cancelToken: CancelToken) => {
   return axios({
     method: "post",
     url: "http://jsonplaceholder.typicode.com/posts",
     data: {
       title: name,
     },
+    cancelToken: cancelToken,
   });
 };

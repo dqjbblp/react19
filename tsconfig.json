@@ -1,7 +1,16 @@
 {
-  "files": [],
+  "files": [], // 空数组：表示根配置不处理任何文件
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
+  "compilerOptions": {
+    "baseUrl": ".", // 可选：如需全局别名，可保留；否则移到子配置
+    "paths": {
+      "@/*": ["src/*"] // 注意：删除末尾多余的逗号！
+    },
+    "noEmit": true, // 核心：根配置禁用代码输出
+    "skipLibCheck": true // 可选：跳过库类型检查，提升速度
+  }
+  // 移除 include：references 模式下根配置不需要 include
 }

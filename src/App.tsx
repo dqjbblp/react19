@@ -43,6 +43,7 @@ const App = () => {
               <Link to="/user/2/hy/23">User hy</Link>
               <Link to="/gsap">Gsap</Link>
               <Link to="/component">Component</Link>
+              <Link to="/loadings">Loadings</Link>
             </div>
             <div className={"flex gap-3 flex-1"}>
               <Link to="/r19">R19</Link>

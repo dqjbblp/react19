@@ -1,0 +1,40 @@
+.out{
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff0012;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left-color:transparent ;
+  animation: outAnimation 2s linear infinite ;
+}
+
+.in{
+  width: 26px;
+  height: 26px;
+  border: 2px solid #ff0012;
+  border-radius: 13px;
+  border-right-color:transparent ;
+  animation: inAnimation 1s linear infinite ;
+}
+
+@keyframes outAnimation {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes inAnimation {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-360deg);
+  }
+}

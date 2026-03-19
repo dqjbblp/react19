@@ -42,6 +42,7 @@ const GsapDemo = () => {
             end: "top 20%",
             scrub: true,
             // markers: true,
+            pin: true,
           },
         }
       );

@@ -27,19 +27,21 @@ const Wrapper = (Component: React.FC<MyProps>) => {
   let root: Root | null;
   let container: HTMLDivElement;
 
-  const hide = function () {
+  const hide = () => {
     if (root) {
       document.body.removeChild(container);
+      document.body.style.removeProperty("overflow-y");
       root.unmount();
       root = null;
     }
   };
 
-  const show = function (props: MyProps) {
+  const show = (props: MyProps) => {
     if (!root) {
       container = document.createElement("div");
       root = createRoot(container);
       root.render(<Component {...props} />);
+      document.body.style.overflowY = "hidden";
       document.body.appendChild(container);
     }
   };

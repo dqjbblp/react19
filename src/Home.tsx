@@ -1,8 +1,15 @@
-import { Suspense, use, useEffect, useState } from "react";
+import { memo, Suspense, use, useEffect, useState } from "react";
 import useToolTipStore from "./Store/useToolTipStore";
+import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 
-const Home = () => {
+const Home = memo(() => {
   const { setList } = useToolTipStore();
+
+  const login = useGoogleLogin({
+    onSuccess: (e) => {
+      console.log(e);
+    },
+  });
 
   return (
     <div>
@@ -12,6 +19,14 @@ const Home = () => {
       </Suspense>
       <FakseAsync />
 
+      <GoogleLogin
+        onSuccess={(e) => {
+          console.log(e);
+        }}
+      />
+
+      <button onClick={() => login()}>自行一键登录</button>
+
       <button onClick={() => setList({ msg: "成功啦～", type: "success" })}>
         成功的提示
       </button>
@@ -20,7 +35,7 @@ const Home = () => {
       </button>
     </div>
   );
-};
+});
 
 export default Home;
 

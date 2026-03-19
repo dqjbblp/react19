@@ -9,12 +9,18 @@ import Flip from "./component/flip";
 import Swiper from "./component/swaper";
 import CanvasEle from "./canvas";
 import ThreeD from "./component/threeD";
-import WaterMask from "./component/waterMask";
+import WaterMask from "@/component/waterMask.tsx";
 import Radar from "./component/radar";
 import NewModal from "./component/Modal.tsx";
 import KeepAlive from "./component/KeepAlive/keepAlive.tsx";
 import TestProvider from "./component/testProvider.tsx";
 import FakeList from "./component/fakeList.tsx";
+import DragContainer from "./component/dragContainer.tsx";
+import Magnifier from "./component/magnifier.tsx";
+import PieChart from "./component/charts/pieCharts.tsx";
+import MapChart from "./component/charts/mapChart.tsx";
+import Observer from "./component/observer.tsx";
+import Uploader from "./component/upload.tsx";
 
 const SomeComponents = () => {
   return (
@@ -64,6 +70,18 @@ const SomeComponents = () => {
       <TestProvider />
 
       <FakeList />
+
+      <DragContainer />
+
+      <Magnifier />
+
+      <PieChart />
+
+      <MapChart />
+
+      <Observer />
+
+      <Uploader />
     </div>
   );
 };

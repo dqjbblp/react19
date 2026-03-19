@@ -5,7 +5,7 @@ const FakeList = () => {
   const refL = useRef<HTMLDivElement>(null);
 
   const [array, setArray] = useState<number[]>(
-    Array.from({ length: 10 }, (_, index) => index)
+    Array.from({ length: 1000 }, (_, index) => index)
   );
 
   const high = 32;
@@ -21,17 +21,9 @@ const FakeList = () => {
     transform: "",
   });
 
-  const containerHigh = useMemo(() => {
-    if (refC.current) {
-      return refC.current.offsetHeight;
-    } else {
-      return 0;
-    }
-  }, []);
-
   const maxCount = useMemo(() => {
-    return Math.ceil(containerHigh / high) + 1;
-  }, [containerHigh]);
+    return Math.ceil(380 / high) + 1;
+  }, []);
 
   const addData = () => {
     setArray((prev) => {
