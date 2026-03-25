@@ -4,10 +4,6 @@ class Animal {
     this.name = name;
   }
 
-  static sing() {
-    console.log("i can sing");
-  }
-
   static mySexy() {
     console.log(`my sexy is:${this.sexy}`);
   }
@@ -28,10 +24,12 @@ class Dog extends Animal {
   }
 
   eat(after) {
-    super.eat("粑粑");
+    super.eat();
     console.log(`${this.name} 吃完了～${after}`);
   }
 }
+
+// Animal.mySexy();
 
 const TaiDi = new Dog("泰迪", "棕色的");
 
